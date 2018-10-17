@@ -4,6 +4,9 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 ini_set( 'display_errors' , 1 );
 
 //gets the input data and creates a variable
+$fname = $_GET["fname"];
+$lname = $_GET["lname"];
+$bday = $_GET["bday"];
 $email = $_GET["email"];
 $pass = $_GET["pass"];
 
@@ -14,6 +17,11 @@ function isempty($data,$string){
     else
         echo $string.": ".$data."<br>";
 }
+
+//checks validity of the data
+isempty($fname, "First name");
+isempty($lname, "Last name");
+isempty($bday, "Birthday");
 
 if (strpos($email, "@") !==false)
     isempty($email, "Email");
